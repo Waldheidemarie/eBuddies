@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 import createStore from 'App/Stores'
-import RootScreen from './Containers/Root/RootScreen'
-
+// import RootScreen from './Containers/Root/RootScreen'
+import Login from './Containers/Login/LoginScreen'
+import SignUp from './Containers/SignUpScreen/SignUp'
 const { store, persistor } = createStore()
 
 export default class App extends Component {
@@ -21,7 +22,9 @@ export default class App extends Component {
          * @see https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
          */}
         <PersistGate loading={null} persistor={persistor}>
-          <RootScreen />
+          {/* <Login /> */}
+          <SignUp />
+          {/* <RootScreen /> */}
         </PersistGate>
       </Provider>
     )

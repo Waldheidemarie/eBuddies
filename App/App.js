@@ -5,6 +5,7 @@ import createStore from 'App/Stores'
 // import RootScreen from './Containers/Root/RootScreen'
 import Login from './Containers/Login/LoginScreen'
 import SignUp from './Containers/SignUpScreen/SignUp'
+import ChatScreen from './Containers/Chat/ChatScreen'
 const { store, persistor } = createStore()
 
 export default class App extends Component {
@@ -23,8 +24,9 @@ export default class App extends Component {
          */}
         <PersistGate loading={null} persistor={persistor}>
           {/* <Login /> */}
-          <SignUp />
+          {/* <SignUp /> */}
           {/* <RootScreen /> */}
+          <ChatScreen />
         </PersistGate>
       </Provider>
     )

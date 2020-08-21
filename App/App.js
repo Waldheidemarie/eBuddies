@@ -3,9 +3,15 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 import createStore from 'App/Stores'
 // import RootScreen from './Containers/Root/RootScreen'
+
 import Login from './Containers/Login/LoginScreen'
-import SignUp from './Containers/SignUpScreen/SignUp'
 import ChatScreen from './Containers/Chat/ChatScreen'
+
+// import Login from './Containers/Login/LoginScreen'
+import SignUp from './Containers/SignUp/SignUp'
+import AllEventsScreen from './Containers/AllEvents/AllEventsScreen'
+// import AllEventsScreen from './Containers/AllEvents/AllEventsScreen'
+
 const { store, persistor } = createStore()
 
 export default class App extends Component {
@@ -24,9 +30,10 @@ export default class App extends Component {
          */}
         <PersistGate loading={null} persistor={persistor}>
           {/* <Login /> */}
-          {/* <SignUp /> */}
+          <SignUp />
+          {/* <AllEventsScreen /> */}
           {/* <RootScreen /> */}
-          <ChatScreen />
+      {/* <ChatScreen /> */}
         </PersistGate>
       </Provider>
     )

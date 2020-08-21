@@ -11,6 +11,8 @@ export default {
   white: 'rgb(235, 233, 233)',
   text: '#212529',
   primary: '#007bff',
+  secondary: '#BCE0FD',
+  lightBlue: '#F1F9FF',
   success: '#28a745',
   error: '#dc3545',
 }

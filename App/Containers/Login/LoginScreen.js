@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { View, Text, TextInput, StyleSheet, Button } from 'react-native'
 
 import { SafeAreaView } from 'react-navigation'

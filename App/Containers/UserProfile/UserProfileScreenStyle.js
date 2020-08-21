@@ -1,26 +1,25 @@
 import { StyleSheet } from 'react-native'
-
+import { Helpers, Metrics, Fonts, Colors } from 'App/Theme'
 export default StyleSheet.create({
   image: {
     width: 200,
     height: 200,
   },
   name: {
-    color: 'rgba(38, 153, 251, 1)',
+    color: Colors.blue,
     fontWeight: 'bold',
-    fontSize: 30,
+    ...Fonts.h1,
   },
   location: {
-    color: 'rgba(38, 153, 251, 1)',
-    fontSize: 20,
+    color: Colors.blue,
+    ...Fonts.small,
   },
   description: {
-    color: 'rgba(38, 153, 251, 1)',
-    fontSize: 22,
+    color: Colors.blue,
+    ...Fonts.normal,
   },
   interest: {
-    color: 'rgba(38, 153, 251, 1)',
-    fontSize: 22,
-    fontWeight: 'bold',
+    color: Colors.blue,
+    ...Fonts.h3,
   },
 })

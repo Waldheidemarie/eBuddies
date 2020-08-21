@@ -9,8 +9,10 @@ export default {
   transparent: 'rgba(0,0,0,0)',
   // Example colors:
   white: '#ffffff',
-  text: '#212529',
+  text: '#2699fb',
   primary: '#007bff',
+  secondary: '#BCE0FD',
+  lightBlue: '#F1F9FF',
   success: '#28a745',
   error: '#dc3545',
 }

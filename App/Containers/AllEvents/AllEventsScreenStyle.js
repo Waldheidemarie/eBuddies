@@ -22,7 +22,6 @@ export default StyleSheet.create({
     borderRadius: 50,
     backgroundColor: Colors.primary,
     padding: Metrics.medium,
-    // float: 'left',
   },
   eventImg: {
     width: 375,
@@ -43,7 +42,6 @@ export default StyleSheet.create({
   text: {
     ...Fonts.normal,
     color: Colors.text,
-    // marginBottom: Metrics.tiny,
     textAlign: 'left',
     marginTop: 20,
     marginBottom: 20,
@@ -52,7 +50,6 @@ export default StyleSheet.create({
   headerText: {
     ...Fonts.normal,
     color: Colors.text,
-    // marginBottom: Metrics.tiny,
     textAlign: 'left',
     marginTop: 3,
     marginBottom: 0,

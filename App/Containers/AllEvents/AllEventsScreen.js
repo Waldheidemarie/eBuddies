@@ -1,13 +1,8 @@
 import React from 'react'
-import { Platform, Text, View, Button, ActivityIndicator, Image } from 'react-native'
+import { Text, View } from 'react-native'
 import { connect } from 'react-redux'
 import Style from './AllEventsScreenStyle'
-import { ApplicationStyles, Helpers, Images, Metrics } from 'App/Theme'
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\nCmd+D or shake for dev menu.',
-  android: 'Double tap R on your keyboard to reload,\nShake or press menu button for dev menu.',
-})
+import { Helpers, Metrics } from 'App/Theme'
 
 class AllEvents extends React.Component {
   componentDidMount() {
@@ -27,7 +22,6 @@ class AllEvents extends React.Component {
         >
           <View style={Style.colMain}>
             <View style={Style.eventHeader}>
-              {/* <Image style={Helpers.fullSize} source={Images.logo} resizeMode={'contain'} /> */}
               {/* <View style={Style.eventAvatar} /> */}
               <Text style={Style.headerText}>All Events</Text>
               <Text style={Style.headerText}>New York, NY</Text>
@@ -50,9 +44,9 @@ class AllEvents extends React.Component {
     )
   }
 
-  _fetchEvents() {
-    this.props.fetchEvents()
-  }
+  // _fetchEvents() {
+  //   this.props.fetchEvents()
+  // }
 }
 
 AllEvents.propTypes = {

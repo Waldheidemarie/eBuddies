@@ -6,7 +6,7 @@ export default StyleSheet.create({
     backgroundColor: Colors.primary,
   },
   logo: {
-    backgroundColor: Colors.white,
+    backgroundColor: 'rgb(235, 233, 233)',
     height: 70,
     width: 70,
   },

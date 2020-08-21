@@ -16,35 +16,37 @@ class AllEvents extends React.Component {
 
   render() {
     return (
-      <View
-        style={[
-          Helpers.fill,
-          Helpers.rowMain,
-          Metrics.mediumHorizontalMargin,
-          Metrics.mediumVerticalMargin,
-        ]}
-      >
-        <View style={Style.colMain}>
-          <View style={Style.eventHeader}>
-            {/* <Image style={Helpers.fullSize} source={Images.logo} resizeMode={'contain'} /> */}
-            {/* <View style={Style.eventAvatar} /> */}
-            <Text style={Style.headerText}>All Events</Text>
-            <Text style={Style.headerText}>New York, NY</Text>
-            <Text style={Style.headerText}>8/21/220</Text>
-          </View>
+      <>
+        <View
+          style={[
+            Helpers.fill,
+            Helpers.rowMain,
+            Metrics.mediumHorizontalMargin,
+            Metrics.mediumVerticalMargin,
+          ]}
+        >
+          <View style={Style.colMain}>
+            <View style={Style.eventHeader}>
+              {/* <Image style={Helpers.fullSize} source={Images.logo} resizeMode={'contain'} /> */}
+              {/* <View style={Style.eventAvatar} /> */}
+              <Text style={Style.headerText}>All Events</Text>
+              <Text style={Style.headerText}>New York, NY</Text>
+              <Text style={Style.headerText}>8/21/220</Text>
+            </View>
 
-          <View style={Style.eventImg} />
+            <View style={Style.eventImg} />
 
-          <View>
-            <Text style={Style.text}>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim.
-              <Text style={Style.text}>Name of Event</Text>
-            </Text>
-            <Text style={Style.moreText}>...more</Text>
+            <View>
+              <Text style={Style.text}>
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim.
+                <Text style={Style.text}>Name of Event</Text>
+              </Text>
+              <Text style={Style.moreText}>...more</Text>
+            </View>
           </View>
         </View>
-      </View>
+      </>
     )
   }
 

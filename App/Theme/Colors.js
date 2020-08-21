@@ -7,7 +7,8 @@
 
 export default {
   transparent: 'rgba(0,0,0,0)',
-  // Example colors:
+  blue: 'rgba(38, 153, 251, 1)',
+  mediumBlue: 'rgba(188, 224, 253, 1)',
   white: 'rgb(235, 233, 233)',
   text: '#212529',
   primary: '#007bff',

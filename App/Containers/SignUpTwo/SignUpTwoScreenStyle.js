@@ -27,7 +27,7 @@ export default StyleSheet.create({
   login: {
     width: 550,
     position: 'relative',
-    top: 260,
+    top: 190,
     height: 60,
     alignSelf: 'center',
     backgroundColor: 'rgba(188, 224, 253, 1)',
@@ -42,7 +42,7 @@ export default StyleSheet.create({
     ...Fonts.small,
     color: 'black',
     position: 'relative',
-    top: 250,
+    top: 180,
   },
   arrow: {
     width: 30,

@@ -7,8 +7,10 @@ import createStore from 'App/Stores'
 // import Login from './Containers/Login/LoginScreen'
 // import ChatScreen from './Containers/Chat/ChatScreen'
 
-// import Login from './Containers/Login/LoginScreen'
-// import SignUp from './Containers/SignUp/SignUp'
+import Login from './Containers/Login/LoginScreen'
+import SignUp from './Containers/SignUp/SignUpScreen'
+import SignUpTwo from './Containers/SignUpTwo/SignUpTwoScreen'
+import Interests from './Containers/Interests/InterestsScreen'
 import AllEventsScreen from './Containers/AllEvents/AllEventsScreen'
 
 const { store, persistor } = createStore()
@@ -29,8 +31,10 @@ export default class App extends Component {
          */}
         <PersistGate loading={null} persistor={persistor}>
           {/* <Login /> */}
-          {/* <SignUp /> */}
-          <AllEventsScreen />
+          {/* <SignUpTwo /> */}
+          <Interests />
+
+          {/* <AllEventsScreen /> */}
           {/* <RootScreen /> */}
           {/* <ChatScreen /> */}
         </PersistGate>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { View, Text, Button, TextInput, StyleSheet } from 'react-native'
+import { View, Text, Image, Button, TextInput, StyleSheet } from 'react-native'
 import Style from '../AllEvents/AllEventsScreenStyle'
 import styles from './SignUpScreenStyle'
 import { ApplicationStyles, Helpers, Images, Metrics, Fonts } from 'App/Theme'
@@ -10,6 +10,9 @@ class SignUp extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.background}>
+          <View>
+            <Image style={styles.arrow} source={require('App/Assets/Images/arrow.png')} />
+          </View>
           <TextInput
             style={{
               ...Fonts.normal,
@@ -64,10 +67,14 @@ class SignUp extends React.Component {
             </Button>
           </View>
           <View style={styles.account}>
-            <Text>Already have an account?</Text>
+            <Button
+              color="rgba(38,153,251,1)"
+              style={{ ...Fonts.small }}
+              title="Already have an account?"
+            />
           </View>
           <View style={styles.login}>
-            <Button color="white" style={{ ...Fonts.small }} title="LOGIN" />
+            <Button color="rgba(38,153,251,1)" style={{ ...Fonts.small }} title="LOGIN" />
           </View>
         </View>
       </View>

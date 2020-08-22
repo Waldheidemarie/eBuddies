@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { View, Text, Image, Button, TextInput, StyleSheet } from 'react-native'
+import { View, Image, Text, Button, TextInput, StyleSheet } from 'react-native'
 import Style from '../AllEvents/AllEventsScreenStyle'
-import styles from './LoginScreenStyle'
+import styles from './SignUpTwoScreenStyle'
 import { ApplicationStyles, Helpers, Images, Metrics, Fonts } from 'App/Theme'
 
-class Login extends React.Component {
+class SignUpTwo extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -13,7 +13,6 @@ class Login extends React.Component {
           <View>
             <Image style={styles.arrow} source={require('App/Assets/Images/arrow.png')} />
           </View>
-
           <TextInput
             style={{
               ...Fonts.normal,
@@ -22,13 +21,13 @@ class Login extends React.Component {
               borderBottomWidth: 0.5,
               borderBottomColor: 'rgba(38,153,251,1)',
               marginHorizontal: 40,
-              marginBottom: 40,
+              marginBottom: 20,
               color: 'rgba(38,153,251,1)',
               paddingHorizontal: 10,
             }}
-            placeholder="jdoe@gmail.com"
+            placeholder="Address"
             placeholderTextColor="rgba(38,153,251,1)"
-            keyboardType="email-address"
+            keyboardType="name-phone-pad"
           />
           <TextInput
             style={{
@@ -38,13 +37,45 @@ class Login extends React.Component {
               borderBottomWidth: 0.5,
               borderBottomColor: 'rgba(38,153,251,1)',
               marginHorizontal: 40,
-              marginBottom: 40,
+              marginBottom: 20,
               color: 'rgba(38,153,251,1)',
               paddingHorizontal: 10,
             }}
-            placeholder="Enter Password"
+            placeholder="City"
             placeholderTextColor="rgba(38,153,251,1)"
-            secureTextEntry
+            keyboardType="name-phone-pad"
+          />
+          <TextInput
+            style={{
+              ...Fonts.normal,
+              height: 50,
+              backgroundColor: 'rgb(235, 233, 233)',
+              borderBottomWidth: 0.5,
+              borderBottomColor: 'rgba(38,153,251,1)',
+              marginHorizontal: 40,
+              marginBottom: 20,
+              color: 'rgba(38,153,251,1)',
+              paddingHorizontal: 10,
+            }}
+            placeholder="State"
+            placeholderTextColor="rgba(38,153,251,1)"
+            keyboardType="name-phone-pad"
+          />
+          <TextInput
+            style={{
+              ...Fonts.normal,
+              height: 50,
+              backgroundColor: 'rgb(235, 233, 233)',
+              borderBottomWidth: 0.5,
+              borderBottomColor: 'rgba(38,153,251,1)',
+              marginHorizontal: 40,
+              marginBottom: 20,
+              color: 'rgba(38,153,251,1)',
+              paddingHorizontal: 10,
+            }}
+            placeholder="ZipCode"
+            placeholderTextColor="rgba(38,153,251,1)"
+            keyboardType="name-phone-pad"
           />
           <View style={styles.button}>
             <Button color="white" style={{ ...Fonts.normal, textAlign: 'center' }} title="CONTINUE">
@@ -55,11 +86,12 @@ class Login extends React.Component {
             <Button
               color="rgba(38,153,251,1)"
               style={{ ...Fonts.small }}
-              title="Don't have an account?"
+              title="Already have an account?"
             />
           </View>
+
           <View style={styles.login}>
-            <Button color="rgba(38,153,251,1)" style={{ ...Fonts.small }} title="SIGN UP" />
+            <Button color="rgba(38,153,251,1)" style={{ ...Fonts.small }} title="LOGIN" />
           </View>
         </View>
       </View>
@@ -67,4 +99,4 @@ class Login extends React.Component {
   }
 }
 
-export default connect(null)(Login)
+export default connect(null)(SignUpTwo)

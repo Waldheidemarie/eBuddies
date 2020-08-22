@@ -21,7 +21,7 @@ const StackNavigator = createStackNavigator(
   },
   {
     // By default the application will show the splash screen
-    initialRouteName: 'SplashScreen',
+    initialRouteName: SplashScreen,
     // See https://reactnavigation.org/docs/en/stack-navigator.html#stacknavigatorconfig
     headerMode: 'none',
   }

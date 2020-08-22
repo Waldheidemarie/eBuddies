@@ -33,7 +33,7 @@ export default class App extends Component {
           <SignUp />
           {/* <AllEventsScreen /> */}
           {/* <RootScreen /> */}
-      {/* <ChatScreen /> */}
+          {/* <ChatScreen /> */}
         </PersistGate>
       </Provider>
     )

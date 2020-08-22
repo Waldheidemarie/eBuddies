@@ -64,4 +64,12 @@ export default StyleSheet.create({
     marginHorizontal: 20,
     fontSize: 12,
   },
+  eventFooter: {
+    width: 300,
+    alignContent: 'center',
+    justifyContent: 'center',
+    height: 70,
+    backgroundColor: Colors.lightBlue,
+    padding: Metrics.medium,
+  },
 })

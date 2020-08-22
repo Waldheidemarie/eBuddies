@@ -3,7 +3,7 @@ import { Text, View, Image } from 'react-native'
 import { connect } from 'react-redux'
 import Style from './UserProfileScreenStyle'
 
-class ExampleScreen extends React.Component {
+class UserProfileScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
@@ -27,4 +27,4 @@ class ExampleScreen extends React.Component {
   }
 }
 
-export default connect(null)(ExampleScreen)
+export default connect(null)(UserProfile)

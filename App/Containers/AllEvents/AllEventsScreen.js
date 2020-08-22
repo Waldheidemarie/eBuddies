@@ -3,6 +3,7 @@ import { Text, View } from 'react-native'
 import { connect } from 'react-redux'
 import Style from './AllEventsScreenStyle'
 import { Helpers, Metrics } from 'App/Theme'
+import HeaderScreen from '../Header/HeaderScreen'
 
 class AllEvents extends React.Component {
   componentDidMount() {
@@ -20,13 +21,8 @@ class AllEvents extends React.Component {
             Metrics.mediumVerticalMargin,
           ]}
         >
-          <View style={Style.colMain}>
-            <View style={Style.eventHeader}>
-              {/* <View style={Style.eventAvatar} /> */}
-              <Text style={Style.headerText}>All Events</Text>
-              <Text style={Style.headerText}>New York, NY</Text>
-              <Text style={Style.headerText}>8/21/220</Text>
-            </View>
+          <View>
+            <HeaderScreen />
 
             <View style={Style.eventImg} />
 

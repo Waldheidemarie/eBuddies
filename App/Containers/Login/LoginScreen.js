@@ -4,8 +4,18 @@ import { View, Text, Image, Button, TextInput, StyleSheet } from 'react-native'
 import Style from '../AllEvents/AllEventsScreenStyle'
 import styles from './LoginScreenStyle'
 import { ApplicationStyles, Helpers, Images, Metrics, Fonts } from 'App/Theme'
+import * as firebase from 'firebase/app'
+import 'firebase/auth'
 
 class Login extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      email: '',
+      password: '',
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -26,6 +36,7 @@ class Login extends React.Component {
               color: 'rgba(38,153,251,1)',
               paddingHorizontal: 10,
             }}
+            value={this.state.email}
             placeholder="jdoe@gmail.com"
             placeholderTextColor="rgba(38,153,251,1)"
             keyboardType="email-address"
@@ -42,6 +53,7 @@ class Login extends React.Component {
               color: 'rgba(38,153,251,1)',
               paddingHorizontal: 10,
             }}
+            value={this.state.password}
             placeholder="Enter Password"
             placeholderTextColor="rgba(38,153,251,1)"
             secureTextEntry

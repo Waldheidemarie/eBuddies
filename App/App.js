@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 import createStore from 'App/Stores'
+import * as firebase from 'firebase/app'
+import { firebaseConfig } from './Config/firebase'
 // import RootScreen from './Containers/Root/RootScreen'
 
 // import Login from './Containers/Login/LoginScreen'
@@ -16,6 +18,13 @@ import AllEventsScreen from './Containers/AllEvents/AllEventsScreen'
 const { store, persistor } = createStore()
 
 export default class App extends Component {
+  constructor() {
+    super()
+    this.initializeFirebase()
+  }
+  initializeFirebase = () => {
+    firebase.initializeApp(firebaseConfig)
+  }
   render() {
     return (
       /**
@@ -30,9 +39,9 @@ export default class App extends Component {
          * @see https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
          */}
         <PersistGate loading={null} persistor={persistor}>
-          {/* <Login /> */}
+          <SignUp />
           {/* <SignUpTwo /> */}
-          <Interests />
+          {/* <Interests /> */}
 
           {/* <AllEventsScreen /> */}
           {/* <RootScreen /> */}

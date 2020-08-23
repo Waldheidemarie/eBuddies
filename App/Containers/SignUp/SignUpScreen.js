@@ -4,8 +4,41 @@ import { View, Text, Image, Button, TextInput, StyleSheet } from 'react-native'
 import Style from '../AllEvents/AllEventsScreenStyle'
 import styles from './SignUpScreenStyle'
 import { ApplicationStyles, Helpers, Images, Metrics, Fonts } from 'App/Theme'
+import * as firebase from 'firebase'
+import 'firebase/auth'
 
 class SignUp extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      name: '',
+      email: '',
+      password: '',
+    }
+  }
+  onSignUp = async () => {
+    if (this.state.email && this.state.password && this.state.name) {
+      try {
+        const response = await firebase
+          .auth()
+          .createUserWithEmailAndPassword(this.state.email, this.state.password)
+        const response4 = await firebase
+          .database()
+          .ref('User/' + firebase.auth().currentUser.uid)
+          .set({
+            authId: firebase.auth().currentUser.uid,
+            name: this.state.name,
+            email: this.state.email,
+            password: this.state.password,
+            // profile_picture: imageUrl,
+          })
+        console.log(firebase.auth().currentUser.uid)
+      } catch (error) {
+        console.log('error', error)
+      }
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -25,6 +58,8 @@ class SignUp extends React.Component {
               color: 'rgba(38,153,251,1)',
               paddingHorizontal: 10,
             }}
+            onChangeText={(name) => this.setState({ name })}
+            value={this.state.name}
             placeholder="John Doe"
             placeholderTextColor="rgba(38,153,251,1)"
             keyboardType="name-phone-pad"
@@ -41,6 +76,8 @@ class SignUp extends React.Component {
               color: 'rgba(38,153,251,1)',
               paddingHorizontal: 10,
             }}
+            onChangeText={(email) => this.setState({ email })}
+            value={this.state.email}
             placeholder="jdoe@gmail.com"
             placeholderTextColor="rgba(38,153,251,1)"
             keyboardType="email-address"
@@ -57,12 +94,19 @@ class SignUp extends React.Component {
               color: 'rgba(38,153,251,1)',
               paddingHorizontal: 10,
             }}
+            onChangeText={(password) => this.setState({ password })}
+            value={this.state.password}
             placeholder="Create Password"
             placeholderTextColor="rgba(38,153,251,1)"
             secureTextEntry
           />
           <View style={styles.button}>
-            <Button color="white" style={{ ...Fonts.normal, textAlign: 'center' }} title="CONTINUE">
+            <Button
+              color="white"
+              style={{ ...Fonts.normal, textAlign: 'center' }}
+              title="CONTINUE"
+              onPress={this.onSignUp}
+            >
               CONTINUE
             </Button>
           </View>

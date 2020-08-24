@@ -1,37 +1,47 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React from 'react'
 import { GiftedChat } from 'react-native-gifted-chat'
 
-export function ChatScreen() {
-  const [messages, setMessages] = useState([])
-
-  useEffect(() => {
-    setMessages([
-      {
-        _id: 1,
-        text: 'Hello developer',
-        createdAt: new Date(),
-        user: {
-          _id: 2,
-          name: 'React Native',
-          avatar: 'https://placeimg.com/140/140/any',
+class ChatScreen extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { messages: [] }
+    this.onSend = this.onSend.bind(this)
+  }
+  componentWillMount() {
+    this.setState({
+      messages: [
+        {
+          _id: 1,
+          text: 'Hello developer',
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'User',
+            avatar:
+              'https://www.kindpng.com/picc/m/269-2697881_computer-icons-user-clip-art-transparent-png-icon.png',
+          },
         },
-      },
-    ])
-  }, [])
-
-  const onSend = useCallback((messages = []) => {
-    setMessages((previousMessages) => GiftedChat.append(previousMessages, messages))
-  }, [])
-
-  return (
-    <GiftedChat
-      messages={messages}
-      onSend={(messages) => onSend(messages)}
-      user={{
-        _id: 1,
-      }}
-    />
-  )
+      ],
+    })
+  }
+  onSend(messages = []) {
+    this.setState((previousState) => {
+      return {
+        messages: GiftedChat.append(previousState.messages, messages),
+      }
+    })
+  }
+  render() {
+    return (
+      <GiftedChat
+        messages={this.state.messages}
+        onSend={this.onSend}
+        user={{
+          _id: 1,
+        }}
+      />
+    )
+  }
 }
 
 export default ChatScreen

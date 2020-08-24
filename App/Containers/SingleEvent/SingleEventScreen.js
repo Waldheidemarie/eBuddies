@@ -3,12 +3,12 @@ import { Text, View } from 'react-native'
 import { connect } from 'react-redux'
 import Style from './SingleEventScreenStyle'
 import { Helpers, Metrics } from 'App/Theme'
-import FontAwesome, {
-  SolidIcons,
-  RegularIcons,
-  BrandIcons,
-  parseIconFromClassName,
-} from 'react-native-fontawesome'
+// import FontAwesome, {
+//   SolidIcons,
+//   RegularIcons,
+//   BrandIcons,
+//   parseIconFromClassName,
+// } from 'react-native-fontawesome'
 
 class SingleEvent extends React.Component {
   componentDidMount() {
@@ -16,7 +16,7 @@ class SingleEvent extends React.Component {
   }
 
   render() {
-    const parsedIcon = parseIconFromClassName('fas fa-map-marker-alt')
+    // const parsedIcon = parseIconFromClassName('fas fa-map-marker-alt')
     return (
       <>
         <View

@@ -5,13 +5,13 @@ import createStore from 'App/Stores'
 // import * as firebase from 'firebase/app'
 // import { firebaseConfig } from './Config/firebase'
 
-// import RootScreen from './Containers/Root/RootScreen'
-// import ChatScreen from './Containers/Chat/ChatScreen'
-// import Login from './Containers/Login/LoginScreen'
-// import SignUp from './Containers/SignUp/SignUpScreen'
-// import SignUpTwo from './Containers/SignUpTwo/SignUpTwoScreen'
-// import Interests from './Containers/Interests/InterestsScreen'
-// import AllEventsScreen from './Containers/AllEvents/AllEventsScreen'
+import RootScreen from './Containers/Root/RootScreen'
+import ChatScreen from './Containers/Chat/ChatScreen'
+import Login from './Containers/Login/LoginScreen'
+import SignUp from './Containers/SignUp/SignUpScreen'
+import SignUpTwo from './Containers/SignUpTwo/SignUpTwoScreen'
+import Interests from './Containers/Interests/InterestsScreen'
+import AllEventsScreen from './Containers/AllEvents/AllEventsScreen'
 import SingleEventScreen from './Containers/SingleEvent/SingleEventScreen'
 // import UserProfileScreen from './Containers/UserProfile/UserProfileScreen'
 
@@ -44,9 +44,9 @@ export default class App extends Component {
           {/* <SignUpTwo /> */}
           {/* <Interests /> */}
           {/* <AllEventsScreen /> */}
-          <SingleEventScreen />
+          {/* <SingleEventScreen /> */}
           {/* <RootScreen /> */}
-          {/* <ChatScreen /> */}
+          <ChatScreen />
           {/* <UserProfileScreen /> */}
         </PersistGate>
       </Provider>

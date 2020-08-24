@@ -28,6 +28,12 @@ export default StyleSheet.create({
     textAlign: 'left',
     marginHorizontal: 20,
   },
+  locationIcon: {
+    ...Fonts.large,
+    color: Colors.blue,
+    textAlign: 'left',
+    marginHorizontal: 40,
+  },
   eventDate: {
     ...Fonts.medium,
     color: Colors.blue,
@@ -49,6 +55,22 @@ export default StyleSheet.create({
     marginBottom: 20,
     marginHorizontal: 20,
     fontSize: 12,
+  },
+  addEventCircle: {
+    ...Helpers.fullWidth,
+    height: 50,
+    width: 50,
+    borderRadius: 50,
+    backgroundColor: Colors.primary,
+    alignItems: 'center',
+    marginLeft: 'auto',
+    marginTop: 20,
+    marginRight: 20,
+  },
+  addEventPlusSign: {
+    color: Colors.white,
+    fontSize: 40,
+    top: -5,
   },
   eventFooter: {
     width: 300,

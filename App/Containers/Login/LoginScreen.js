@@ -1,74 +1,82 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { View, Text, TextInput, StyleSheet, Button } from 'react-native'
+import { View, Text, Image, Button, TextInput, StyleSheet } from 'react-native'
+import Style from '../AllEvents/AllEventsScreenStyle'
+import styles from './LoginScreenStyle'
+import { ApplicationStyles, Helpers, Images, Metrics, Fonts } from 'App/Theme'
+import * as firebase from 'firebase/app'
+import 'firebase/auth'
 
-import { SafeAreaView } from 'react-navigation'
 class Login extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      email: '',
+      password: '',
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="jdoe@gmail.com"
-          placeholderTextColor="black"
-          keyboardType="email-address"
-        />
-        <TextInput
-          style={styles.textInput}
-          placeholder="Enter Password"
-          placeholderTextColor="black"
-          secureTextEntry
-        />
-        <View style={{ alignItem: 'center' }}>
-          <Button color="rgba(38,153,251,1)" style={styles.loginButton} title="Login">
-            Login
-          </Button>
-          <Button color="black" style={styles.loginButton} title="Sign Up">
-            Sign Up
-          </Button>
+        <View style={styles.background}>
+          <View>
+            <Image style={styles.arrow} source={require('App/Assets/Images/arrow.png')} />
+          </View>
+
+          <TextInput
+            style={{
+              ...Fonts.normal,
+              height: 50,
+              backgroundColor: 'rgb(235, 233, 233)',
+              borderBottomWidth: 0.5,
+              borderBottomColor: 'rgba(38,153,251,1)',
+              marginHorizontal: 40,
+              marginBottom: 40,
+              color: 'rgba(38,153,251,1)',
+              paddingHorizontal: 10,
+            }}
+            value={this.state.email}
+            placeholder="jdoe@gmail.com"
+            placeholderTextColor="rgba(38,153,251,1)"
+            keyboardType="email-address"
+          />
+          <TextInput
+            style={{
+              ...Fonts.normal,
+              height: 50,
+              backgroundColor: 'rgb(235, 233, 233)',
+              borderBottomWidth: 0.5,
+              borderBottomColor: 'rgba(38,153,251,1)',
+              marginHorizontal: 40,
+              marginBottom: 40,
+              color: 'rgba(38,153,251,1)',
+              paddingHorizontal: 10,
+            }}
+            value={this.state.password}
+            placeholder="Enter Password"
+            placeholderTextColor="rgba(38,153,251,1)"
+            secureTextEntry
+          />
+          <View style={styles.button}>
+            <Button color="white" style={{ ...Fonts.normal, textAlign: 'center' }} title="CONTINUE">
+              CONTINUE
+            </Button>
+          </View>
+          <View style={styles.account}>
+            <Button
+              color="rgba(38,153,251,1)"
+              style={{ ...Fonts.small }}
+              title="Don't have an account?"
+            />
+          </View>
+          <View style={styles.login}>
+            <Button color="rgba(38,153,251,1)" style={{ ...Fonts.small }} title="SIGN UP" />
+          </View>
         </View>
       </View>
     )
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-    flex: 1,
-    position: 'relative',
-    top: 250,
-  },
-  textInput: {
-    height: 50,
-    borderWidth: 0.5,
-    borderColor: 'black',
-    marginHorizontal: 40,
-    marginBottom: 10,
-    color: 'black',
-    paddingHorizontal: 10,
-  },
-  loginButton: {
-    height: 50,
-    borderWidth: 0.5,
-    borderColor: 'black',
-    marginHorizontal: 40,
-    marginBottom: 10,
-    color: 'red',
-    paddingHorizontal: 10,
-  },
-  circleGradient: {
-    backgroundColor: 'white',
-    borderRadius: 5,
-  },
-  visit: {
-    margin: 4,
-    paddingHorizontal: 6,
-    textAlign: 'center',
-    backgroundColor: 'white',
-    color: '#008f68',
-    fontSize: 12,
-  },
-})
-
-export default Login
+export default connect(null)(Login)

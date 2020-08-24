@@ -20,7 +20,7 @@ export default StyleSheet.create({
     margin: 10,
     borderColor: 'rgba(38,153,251,1)',
     position: 'relative',
-    top: 60,
+    top: 0,
     width: 342,
     height: 60,
   },
